@@ -1,0 +1,45 @@
+body {
+  background-color: rgb(222, 222, 4);
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  border: 3px solid green;
+  padding: 10px;
+  margin-bottom: 45px;
+}
+
+.container {
+  text-align: center;
+}
+
+#add-burger {
+  padding: 10px;
+  font-size: 30px;
+  background-color: rgb(24, 97, 255);
+  color: white;
+  margin: 10px;
+}
+
+li {
+  padding: 5px;
+  margin: 5px;
+  background: #faebd7;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.create-update-form {
+  padding: 5px;
+  margin: 5px;
+  background: aqua;
+}
+
+.form-group {
+  margin-bottom: 5px;
+}
