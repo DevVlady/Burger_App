@@ -2,18 +2,39 @@ body {
   background-color: rgb(255, 255, 0);
 }
 
+h1 {
+  font-size: 60px;
+}
+
+h2 {
+  font-size: 45px;
+  background-color: red;
+}
+
+h4 {
+  font-size: 45px;
+  background-color: green;
+}
+
+#ca {
+  padding: 15px;
+  width: 200px;
+}
+
 img {
+  margin-top: 45px;
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 40%;
   border: 3px solid green;
   padding: 10px;
-  margin-bottom: 45px;
+  margin-bottom: 35px;
 }
 
 .container {
   text-align: center;
+  margin: 20px 55px 20px 55px;
 }
 
 #add-burger {
