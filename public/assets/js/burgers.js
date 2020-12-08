@@ -3,8 +3,8 @@ $(function() {
   $.ajax("/burgers", {
     type: "GET"
   }).then(function(data) {
-    var sleepyElem = $("#sleepyBurgers");
-    var nosleepyElem = $("#notSleepyBurgers");
+    var devouredElem = $("#devouredBurgers");
+    var nodevouredElem = $("#notDevouredBurgers");
 
     var burgers = data.burgers;
     var len = burgers.length;
@@ -14,16 +14,16 @@ $(function() {
         "<li>" +
         burgers[i].id +
         ". "+burgers[i].name +
-        "<button class='change-sleep' data-id='" +
+        "<button class='change-devour' data-id='" +
         burgers[i].id +
-        "' data-newsleep='" +
-        !burgers[i].sleepy +
+        "' data-newdevour='" +
+        !burgers[i].devoured +
         "'>";
 
-      if (burgers[i].sleepy) {
-        new_elem += "SLEEP TIME!";
+      if (burgers[i].devoured) {
+        new_elem += "DEVOUR TIME!";
       } else {
-        new_elem += "WAKE UP!";
+        new_elem += "DEVOURED!";
       }
 
       new_elem += "</button>";
@@ -33,30 +33,30 @@ $(function() {
         burgers[i].id +
         "'>DELETE!</button></li>";
 
-      if (burgers[i].sleepy) {
-        sleepyElem.append(new_elem);
+      if (burgers[i].devoured) {
+        devouredElem.append(new_elem);
       } else {
-        nosleepyElem.append(new_elem);
+        nodevouredElem.append(new_elem);
       }
     }
   });
 
-  $(document).on("click", ".change-sleep", function(event) {
+  $(document).on("click", ".change-devour", function(event) {
     var id = $(this).data("id");
-    var newSleep = $(this).data("newsleep")===true;
+    var newDevour = $(this).data("newdevour")===true;
 
-    var newSleepState = {
-      sleepy: newSleep
+    var newDevourState = {
+      devoured: newDevour
     };
 
     // Send the PUT request.
     $.ajax("/burgers/" + id, {
       type: "PUT",
-      data: JSON.stringify(newSleepState),
+      data: JSON.stringify(newDevourState),
       dataType:'json',
       contentType: 'application/json'
     }).then(function() {
-      console.log("changed sleep to", newSleep);
+      console.log("changed devour to", newDevour);
       // Reload the page to get the updated list
       location.reload();
     });
@@ -70,7 +70,7 @@ $(function() {
       name: $("#ca")
         .val()
         .trim(),
-      sleepy: $("[name=sleepy]:checked")
+      devoured: $("[name=devoured]:checked")
         .val()
         .trim()
     };
