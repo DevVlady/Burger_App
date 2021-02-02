@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Vlady14/Burger_App.git"
+    "url": "git+https://github.com/DevVlady/Burger_App.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Vlady14/Burger_App/issues"
+    "url": "https://github.com/DevVlady/Burger_App/issues"
   },
-  "homepage": "https://github.com/Vlady14/Burger_App#readme",
+  "homepage": "https://github.com/DevVlady/Burger_App#readme",
   "dependencies": {
     "express": "^4.17.1",
     "mysql": "^2.18.1"
